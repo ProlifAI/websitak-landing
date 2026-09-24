@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تواصل معنا — وِبْسِيتَك</title>
+<meta name="description" content="كلّمنا — رسالتك توصلنا مباشرة وبخصوصية تامة.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0a;--panel:#111;--line:#222;--txt:#ededed;--dim:#888;--accent:#fff;--green:#10a37f}
+body{font-family:'Segoe UI',Tahoma,-apple-system,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.8;-webkit-font-smoothing:antialiased}
+.wrap{max-width:640px;margin:0 auto;padding:0 24px}
+a{color:inherit}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+nav .brand{font-weight:700;letter-spacing:.12em;font-size:1rem;text-decoration:none}
+nav .back{color:var(--dim);text-decoration:none;font-size:.9rem}
+nav .back:hover{color:var(--txt)}
+h1{font-size:1.6rem;font-weight:600;margin:56px 0 12px}
+.lead{color:var(--dim);margin-bottom:40px;max-width:520px}
+form{display:grid;gap:16px;margin-bottom:40px}
+label{display:block;font-size:.82rem;color:var(--dim);margin-bottom:6px}
+input,textarea{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:8px;color:var(--txt);padding:12px 14px;font:inherit;font-size:.95rem}
+input:focus,textarea:focus{outline:none;border-color:#444}
+textarea{min-height:140px;resize:vertical}
+.hp{position:absolute;left:-9999px;opacity:0}
+button{background:var(--accent);color:var(--bg);border:none;border-radius:8px;padding:14px 36px;font-weight:700;font-size:1rem;cursor:pointer;justify-self:start;font-family:inherit}
+button:hover{opacity:.9}
+button:disabled{opacity:.5;cursor:default}
+.note{color:#555;font-size:.85rem;margin-bottom:60px}
+.status{font-size:.92rem;padding:12px 16px;border-radius:8px;display:none}
+.status.ok{display:block;background:rgba(16,163,127,.12);color:var(--green);border:1px solid rgba(16,163,127,.4)}
+.status.err{display:block;background:rgba(220,60,60,.1);color:#e07a7a;border:1px solid rgba(220,60,60,.35)}
+.org{border-top:1px solid var(--line);padding:26px 0 60px;color:#555;font-size:.85rem}
+.org b{color:var(--dim);font-weight:600}
+footer{border-top:1px solid var(--line);padding:30px 0;color:#555;font-size:.85rem;text-align:center}
+footer a{color:var(--dim)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><a class="brand" href="/ar/">وِبْسِيتَك</a><a class="back" href="/ar/">← الرئيسية</a></nav>
+
+<h1>كلّمنا</h1>
+<p class="lead">املأ النموذج — رسالتك توصل فريقنا مباشرة، ولا يشوفها حد غيرنا. بنردّ خلال يوم عمل واحد.</p>
+
+<form id="f">
+<div><label for="name">اسمك</label><input id="name" name="name" required maxlength="120" autocomplete="name"></div>
+<div><label for="email">إيميلك</label><input id="email" name="email" type="email" required maxlength="200" autocomplete="email"></div>
+<div><label for="website">موقعك الحالي <span>(اختياري)</span></label><input id="website" name="website" maxlength="200" inputmode="url"></div>
+<div><label for="message">رسالتك</label><textarea id="message" name="message" required maxlength="4000"></textarea></div>
+<input class="hp" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+<button type="submit" id="b">ابعت الرسالة</button>
+<div class="status" id="st" role="status"></div>
+</form>
+
+<p class="note">لا قوايم بريدية، لا دعاية، ولا مشاركة لبياناتك مع حد. رسالتك تُستخدم للردّ عليك بس.</p>
+
+<div class="org">
+<b>مين اللي بتكلمه؟</b><br>
+وِبْسِيتَك من بناء وتشغيل شركة <b>ProlifAI LTD</b> — شركة مسجّلة في إنجلترا وويلز، رقم التسجيل <b>17444371</b>، المقر المسجّل: 71-75 Shelton Street, Covent Garden, London, United Kingdom, WC2H 9JQ.
+</div>
+
+<footer><a href="/ar/privacy/">الخصوصية</a> · <a href="/ar/terms/">الشروط</a> · © 2026 ProlifAI LTD</footer>
+</div>
+<script>
+const f = document.getElementById('f'), st = document.getElementById('st'), b = document.getElementById('b');
+f.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  b.disabled = true; b.textContent = 'بيتبعت…'; st.className = 'status';
+  const fd = new FormData(f);
+  const body = {name: fd.get('name'), email: fd.get('email'), website: fd.get('website') || '', message: fd.get('message'), hp: fd.get('hp') || ''};
+  try {
+    const r = await fetch('https://websitak-contact-production.up.railway.app/api/contact', {
+      method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(body)
+    });
+    if (r.ok) {
+      st.className = 'status ok';
+      st.textContent = 'وصلت الرسالة. هنردّ عليك خلال يوم عمل واحد.';
+      f.reset();
+    } else {
+      const j = await r.json().catch(() => ({}));
+      st.className = 'status err';
+      st.textContent = j.error || 'معلش، حصلت مشكلة — جرّب تاني بعد شوية.';
+    }
+  } catch (_) {
+    st.className = 'status err';
+    st.textContent = 'مشكلة في الاتصال — جرّب تاني بعد شوية.';
+  }
+  b.disabled = false; b.textContent = 'ابعت الرسالة';
+});
+</script>
+</body>
+</html>

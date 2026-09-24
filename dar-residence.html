@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دار ريزيدنس — Dar Residence | شقق مفروشة فاخرة في مدينتي، القاهرة الجديدة</title>
+<meta name="description" content="دار ريزيدنس — شقق مفروشة للإقامة القصيرة في كمبوند مدينتي، القاهرة الجديدة. تقييم 9.7 على Booking.com. حجز مباشر.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#10141f; --ink2:#1a2133; --gold:#c8a35a; --gold2:#e6c98a;
+  --ivory:#f7f4ee; --mist:#8f96a8; --line:rgba(200,163,90,.25);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Cairo',sans-serif;background:var(--ink);color:var(--ivory);line-height:1.7}
+html[lang="en"] body{font-family:'Cormorant Garamond','Cairo',serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+header{position:fixed;top:0;inset-inline:0;z-index:50;background:rgba(16,20,31,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{font-weight:900;font-size:1.25rem;letter-spacing:.5px;color:var(--gold2)}
+.brand small{display:block;font-size:.62rem;color:var(--mist);letter-spacing:3px;font-weight:400}
+.lang-btn{background:none;border:1px solid var(--gold);color:var(--gold2);padding:6px 16px;border-radius:999px;cursor:pointer;font-family:inherit;font-size:.8rem}
+.lang-btn:hover{background:var(--gold);color:var(--ink)}
+.hero{min-height:92vh;display:flex;align-items:center;position:relative;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;background:url("https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/All_pyramids_of_Giza_panorama_2.jpg/1920px-All_pyramids_of_Giza_panorama_2.jpg") center/cover;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,20,31,.55),rgba(16,20,31,.94) 85%);z-index:-1}
+.hero-in{padding:120px 0 60px}
+.kicker{color:var(--gold);letter-spacing:4px;font-size:.8rem;font-weight:600}
+h1{font-size:clamp(2.2rem,5.5vw,3.8rem);font-weight:900;margin:14px 0 10px}
+h1 .en{font-family:'Cormorant Garamond',serif;color:var(--gold2)}
+.sub{color:#cfd3de;max-width:640px;font-size:1.05rem}
+.cta-row{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+.btn{padding:13px 30px;border-radius:999px;font-weight:700;font-size:.95rem;border:1px solid var(--gold);display:inline-flex;align-items:center;gap:8px}
+.btn.solid{background:var(--gold);color:var(--ink)}
+.btn.solid:hover{background:var(--gold2)}
+.btn.ghost{color:var(--gold2)}
+.btn.ghost:hover{background:rgba(200,163,90,.12)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:48px}
+.stat{background:var(--ink2);padding:22px;text-align:center}
+.stat b{display:block;font-size:1.7rem;color:var(--gold2);font-weight:900}
+.stat span{color:var(--mist);font-size:.85rem}
+section{padding:84px 0}
+.sec-kicker{color:var(--gold);letter-spacing:3px;font-size:.75rem;font-weight:600}
+h2{font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:900;margin:10px 0 14px}
+.lead{color:#c3c8d6;max-width:680px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:36px}
+.card{background:var(--ink2);border:1px solid var(--line);border-radius:16px;padding:26px}
+.card h3{color:var(--gold2);font-size:1.05rem;margin-bottom:8px}
+.card p{color:#bfc5d4;font-size:.92rem}
+ul.feat{list-style:none;margin-top:34px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+ul.feat li{background:var(--ink2);border:1px solid var(--line);border-radius:12px;padding:13px 18px;font-size:.95rem;color:#d9dce6}
+ul.feat li::before{content:"◆";color:var(--gold);margin-inline-end:10px;font-size:.7rem}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:36px}
+.gallery figure{position:relative;overflow:hidden;border-radius:16px;aspect-ratio:4/3;border:1px solid var(--line)}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.gallery figure:hover img{transform:scale(1.05)}
+.gallery figcaption{position:absolute;bottom:0;inset-inline:0;padding:26px 16px 12px;background:linear-gradient(transparent,rgba(16,20,31,.92));font-size:.85rem;color:var(--ivory)}
+.quote{background:var(--ink2);border:1px solid var(--line);border-inline-start:3px solid var(--gold);border-radius:14px;padding:24px}
+.quote p{font-style:italic;color:#d9dce6;font-size:.98rem}
+.quote .who{margin-top:14px;color:var(--mist);font-size:.85rem}
+.quote .who b{color:var(--gold2)}
+.policies{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:32px}
+.policy{background:var(--ink2);border:1px solid var(--line);border-radius:12px;padding:18px 22px;font-size:.92rem;color:#cdd2df}
+.policy b{color:var(--gold2);display:block;margin-bottom:4px}
+.book{background:linear-gradient(135deg,var(--ink2),#232c44);border:1px solid var(--gold);border-radius:24px;padding:56px 36px;text-align:center}
+.book p{color:#c3c8d6;margin:10px auto 26px;max-width:520px}
+footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mist);font-size:.8rem;text-align:center}
+footer a{color:var(--gold2)}
+@media(max-width:640px){.hero{min-height:80vh}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <div class="brand">دار ريزيدنس<small>DAR RESIDENCE</small></div>
+  <button class="lang-btn" onclick="toggleLang()" id="langBtn">English</button>
+</div></header>
+
+<div class="hero"><div class="wrap hero-in">
+  <div class="kicker" data-ar="مدينتي · القاهرة الجديدة · مصر" data-en="MADINATY · NEW CAIRO · EGYPT">مدينتي · القاهرة الجديدة · مصر</div>
+  <h1><span data-ar="إقامة قصيرة تليق بك." data-en="A short stay worthy of you.">إقامة قصيرة تليق بك.</span><br>
+  <span class="en" data-ar="دار ريزيدنس" data-en="Dar Residence">دار ريزيدنس</span></h1>
+  <p class="sub" data-ar="شقق مفروشة بالكامل داخل كمبوند مدينتي — هدوء، مساحات خضراء، وأمان على مدار الساعة. تقييم المضيف 9.7 على Booking.com، ونظافة 10 من 10." data-en="Fully furnished apartments inside the Madinaty compound — quiet, green, and secured around the clock. Host rating 9.7 on Booking.com; cleanliness 10/10.">شقق مفروشة بالكامل داخل كمبوند مدينتي — هدوء، مساحات خضراء، وأمان على مدار الساعة. تقييم المضيف 9.7 على Booking.com، ونظافة 10 من 10.</p>
+  <div class="cta-row">
+    <a class="btn solid" href="https://www.booking.com/Share-BVl0XAD" target="_blank" rel="noopener"><span data-ar="احجز عبر Booking.com" data-en="Book on Booking.com">احجز عبر Booking.com</span></a>
+    <a class="btn ghost" href="https://www.facebook.com/share/19Joiv9ehV/" target="_blank" rel="noopener"><span data-ar="صفحتنا على فيسبوك" data-en="Our Facebook page">صفحتنا على فيسبوك</span></a>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>9.7</b><span data-ar="تقييم المضيف" data-en="Host rating">تقييم المضيف</span></div>
+    <div class="stat"><b>10/10</b><span data-ar="النظافة" data-en="Cleanliness">النظافة</span></div>
+    <div class="stat"><b>10/10</b><span data-ar="الموقع والراحة" data-en="Location & comfort">الموقع والراحة</span></div>
+    <div class="stat"><b>4/5</b><span data-ar="تصنيف جودة Booking" data-en="Booking quality grade">تصنيف جودة Booking</span></div>
+  </div>
+</div></div>
+
+<section id="apartment"><div class="wrap">
+  <div class="sec-kicker" data-ar="الشقة" data-en="THE APARTMENT">الشقة</div>
+  <h2 data-ar="أورا ريزيدنس — مدينتي B12" data-en="Aura Residence — Madinaty B12">أورا ريزيدنس — مدينتي B12</h2>
+  <p class="lead" data-ar="شقة ثلاث غرف نوم مطلة على المدينة، مع مسبح خاص وحوض استحمام ساخن، تراس واسع، ومطبخ مجهز بالكامل — جاهزة لاستقبالك من اللحظة الأولى." data-en="A three-bedroom apartment with city views, a private pool and hot tub, a wide terrace, and a fully equipped kitchen — ready from the moment you walk in.">شقة ثلاث غرف نوم مطلة على المدينة، مع مسبح خاص وحوض استحمام ساخن، تراس واسع، ومطبخ مجهز بالكامل — جاهزة لاستقبالك من اللحظة الأولى.</p>
+  <ul class="feat">
+    <li data-ar="مسبح خاص وحوض ساخن وسبا" data-en="Private pool, hot tub & spa bath">مسبح خاص وحوض ساخن وسبا</li>
+    <li data-ar="3 غرف نوم · تراس · إطلالات على المدينة" data-en="3 bedrooms · terrace · city views">3 غرف نوم · تراس · إطلالات على المدينة</li>
+    <li data-ar="مطبخ مجهز بالكامل (ثلاجة + فرن)" data-en="Fully equipped kitchen (fridge + oven)">مطبخ مجهز بالكامل (ثلاجة + فرن)</li>
+    <li data-ar="واي فاي مجاني 25 ميجابت/ثانية" data-en="Free 25 Mbps Wi-Fi">واي فاي مجاني 25 ميجابت/ثانية</li>
+    <li data-ar="تكييف في جميع الأرجاء" data-en="Air conditioning throughout">تكييف في جميع الأرجاء</li>
+    <li data-ar="حديقة ومواقف سيارات مجانية" data-en="Garden & free private parking">حديقة ومواقف سيارات مجانية</li>
+    <li data-ar="خدمة الغرف ونقل من المطار" data-en="Room service & airport transfer">خدمة الغرف ونقل من المطار</li>
+    <li data-ar="غرف عائلية · مناسبة للعمل عن بُعد" data-en="Family rooms · work-friendly">غرف عائلية · مناسبة للعمل عن بُعد</li>
+  </ul>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="sec-kicker" data-ar="مصر من حولك" data-en="EGYPT AROUND YOU">مصر من حولك</div>
+  <h2 data-ar="المعالم على بُعد خطوات" data-en="Landmarks within reach">المعالم على بُعد خطوات</h2>
+  <p class="lead" data-ar="من مدينتي تصل بسهولة إلى أبرز معالم القاهرة: الأهرامات والمتحف المصري وخان الخليلي، إضافة إلى أقرب المراكز التجارية." data-en="From Madinaty, Cairo's greatest landmarks are an easy drive: the Pyramids, the Egyptian Museum, Khan el-Khalili — plus the nearest malls.">من مدينتي تصل بسهولة إلى أبرز معالم القاهرة: الأهرامات والمتحف المصري وخان الخليلي، إضافة إلى أقرب المراكز التجارية.</p>
+  <div class="gallery">
+    <figure><img loading="lazy" alt="أهرامات الجيزة — Pyramids of Giza" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/All_pyramids_of_Giza_panorama_2.jpg/1280px-All_pyramids_of_Giza_panorama_2.jpg"><figcaption data-ar="أهرامات الجيزة" data-en="Pyramids of Giza">أهرامات الجيزة</figcaption></figure>
+    <figure><img loading="lazy" alt="مدينتي — Madinaty" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Madinaty.JPG/1280px-Madinaty.JPG"><figcaption data-ar="مدينتي" data-en="Madinaty">مدينتي</figcaption></figure>
+    <figure><img loading="lazy" alt="برج القاهرة — Cairo Tower" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Cairo_tower_night_view_from_above.jpg/1280px-Cairo_tower_night_view_from_above.jpg"><figcaption data-ar="برج القاهرة" data-en="Cairo Tower">برج القاهرة</figcaption></figure>
+    <figure><img loading="lazy" alt="النيل وكورنيش القاهرة — Nile & Cairo skyline" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Cairo_skyline%2C_Nile_River%2C_Egypt.jpg/1280px-Cairo_skyline%2C_Nile_River%2C_Egypt.jpg"><figcaption data-ar="النيل وسماء القاهرة" data-en="Nile & Cairo skyline">النيل وسماء القاهرة</figcaption></figure>
+    <figure><img loading="lazy" alt="خان الخليلي — Khan el-Khalili" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/The_Khan_el-Khalili_market_in_Cairo%2C_Egypt_%282743501345%29.jpg/1280px-The_Khan_el-Khalili_market_in_Cairo%2C_Egypt_%282743501345%29.jpg"><figcaption data-ar="خان الخليلي" data-en="Khan el-Khalili">خان الخليلي</figcaption></figure>
+    <figure><img loading="lazy" alt="المتحف المصري — Egyptian Museum" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Facade_of_the_Egyptian_Museum%2C_Tahrir_Square%2C_Cairo%2C_Egypt1.jpg/1280px-Facade_of_the_Egyptian_Museum%2C_Tahrir_Square%2C_Cairo%2C_Egypt1.jpg"><figcaption data-ar="المتحف المصري" data-en="Egyptian Museum">المتحف المصري</figcaption></figure>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="sec-kicker" data-ar="موقع مميز" data-en="PRIME LOCATION">موقع مميز</div>
+  <h2 data-ar="كل ما تحتاجه قريب منك" data-en="Everything you need, close by">كل ما تحتاجه قريب منك</h2>
+  <div class="grid">
+    <div class="card"><h3 data-ar="داخل كمبوند مدينتي" data-en="Inside Madinaty">داخل كمبوند مدينتي</h3><p data-ar="حدائق ومناظر طبيعية، مسارات مشي ودراجات، بحيرات، وأمن وحراسة 24 ساعة." data-en="Gardens, walking and cycling paths, lakes, and 24/7 security.">حدائق ومناظر طبيعية، مسارات مشي ودراجات، بحيرات، وأمن وحراسة 24 ساعة.</p></div>
+    <div class="card"><h3 data-ar="التسوق والمولات" data-en="Shopping & malls">التسوق والمولات</h3><p data-ar="Open Air Mall وArabesque Mall داخل مدينتي؛ كايرو فستيفال سيتي وبوينت 90 على بُعد قيادة قصيرة." data-en="Open Air Mall and Arabesque Mall inside Madinaty; Cairo Festival City and Point 90 a short drive away.">Open Air Mall وArabesque Mall داخل مدينتي؛ كايرو فستيفال سيتي وبوينت 90 على بُعد قيادة قصيرة.</p></div>
+    <div class="card"><h3 data-ar="المطاعم والمقاهي" data-en="Dining & cafés">المطاعم والمقاهي</h3><p data-ar="مطاعم شرقية وعالمية، بيتزا وفاست فود، ومقاهي عصرية للقاءات والعمل عن بُعد." data-en="Oriental and international restaurants, pizza and fast food, and modern cafés for meetings or remote work.">مطاعم شرقية وعالمية، بيتزا وفاست فود، ومقاهي عصرية للقاءات والعمل عن بُعد.</p></div>
+    <div class="card"><h3 data-ar="المطارات" data-en="Airports">المطارات</h3><p data-ar="مطار القاهرة الدولي 33 كم · مطار سفنكس الدولي 82 كم — مع خدمة نقل من المطار عند الطلب." data-en="Cairo International 33 km · Sphinx International 82 km — airport transfer available on request.">مطار القاهرة الدولي 33 كم · مطار سفنكس الدولي 82 كم — مع خدمة نقل من المطار عند الطلب.</p></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="sec-kicker" data-ar="آراء الضيوف" data-en="GUEST REVIEWS">آراء الضيوف</div>
+  <h2 data-ar="ماذا قال من أقام معنا" data-en="What our guests said">ماذا قال من أقام معنا</h2>
+  <div class="grid">
+    <div class="quote"><p data-ar="«استقبال وترحيب ممتاز من السيد ضياء. موقع جيد وخدمة ممتازة.»" data-en="&quot;Excellent welcome from Mr. Diaa. Good location, excellent service.&quot;">«استقبال وترحيب ممتاز من السيد ضياء. موقع جيد وخدمة ممتازة.»</p><div class="who"><b>Shaker</b> — <span data-ar="السعودية" data-en="Saudi Arabia">السعودية</span></div></div>
+    <div class="quote"><p data-en="&quot;Everything is excellent and the host was too polite and cooperative — Mr. Diaa.&quot;" data-ar="«كل شيء ممتاز، والمضيف السيد ضياء لبق ومتعاون جداً.»">&quot;Everything is excellent and the host was too polite and cooperative — Mr. Diaa.&quot;</p><div class="who"><b>Elshekhy</b> — <span data-ar="مصر" data-en="Egypt">مصر</span></div></div>
+    <div class="quote"><p data-en="&quot;Very clean and very outstanding service — will definitely recommend.&quot;" data-ar="«نظافة تامة وخدمة رائعة — سأوصي بها بالتأكيد.»">&quot;Very clean and very outstanding service — will definitely recommend.&quot;</p><div class="who"><b>Abdirashid</b> — <span data-ar="الولايات المتحدة" data-en="USA">الولايات المتحدة</span></div></div>
+    <div class="quote"><p data-en="&quot;An outstanding stay from start to finish. The home was spotless, comfortable, and thoughtfully prepared, and the host's hospitality was exceptional.&quot;" data-ar="«إقامة استثنائية من البداية للنهاية. منزل نظيف ومريح ومحضّر بعناية، وضيافة المضيف كانت فوق الممتاز.»">&quot;An outstanding stay from start to finish. The home was spotless, comfortable, and thoughtfully prepared, and the host's hospitality was exceptional.&quot;</p><div class="who"><b>Gina</b> — <span data-ar="مصر" data-en="Egypt">مصر</span></div></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="sec-kicker" data-ar="معلومات الإقامة" data-en="STAY DETAILS">معلومات الإقامة</div>
+  <h2 data-ar="السياسات" data-en="Policies">السياسات</h2>
+  <div class="policies">
+    <div class="policy"><b data-ar="تسجيل الوصول" data-en="Check-in">تسجيل الوصول</b><span data-ar="من 1:00 ظهراً حتى 12:00 منتصف الليل — يُرجى إبلاغنا بموعد الوصول مقدماً." data-en="1:00 PM – 12:00 AM — please tell us your arrival time in advance.">من 1:00 ظهراً حتى 12:00 منتصف الليل — يُرجى إبلاغنا بموعد الوصول مقدماً.</span></div>
+    <div class="policy"><b data-ar="تسجيل المغادرة" data-en="Check-out">تسجيل المغادرة</b><span data-ar="من 12:00 ظهراً حتى 1:00 ظهراً." data-en="12:00 PM – 1:00 PM.">من 12:00 ظهراً حتى 1:00 ظهراً.</span></div>
+    <div class="policy"><b data-ar="الأطفال" data-en="Children">الأطفال</b><span data-ar="مرحب بالأطفال من جميع الأعمار." data-en="Children of all ages are welcome.">مرحب بالأطفال من جميع الأعمار.</span></div>
+    <div class="policy"><b data-ar="الحفلات والحيوانات" data-en="Parties & pets">الحفلات والحيوانات</b><span data-ar="لا يُسمح بالحفلات أو الفعاليات، ولا بالحيوانات الأليفة." data-en="No parties or events; pets are not allowed.">لا يُسمح بالحفلات أو الفعاليات، ولا بالحيوانات الأليفة.</span></div>
+  </div>
+</div></section>
+
+<section id="book" style="padding-top:0"><div class="wrap"><div class="book">
+  <div class="sec-kicker" data-ar="احجز الآن" data-en="BOOK NOW">احجز الآن</div>
+  <h2 data-ar="أنت على بعد خطوة من إقامتك" data-en="You're one step from your stay">أنت على بعد خطوة من إقامتك</h2>
+  <p data-ar="اختر تواريخك على Booking.com، أو راسلنا على فيسبوك — نتحدث العربية والإنجليزية." data-en="Choose your dates on Booking.com, or message us on Facebook — we speak Arabic and English.">اختر تواريخك على Booking.com، أو راسلنا على فيسبوك — نتحدث العربية والإنجليزية.</p>
+  <div class="cta-row" style="justify-content:center">
+    <a class="btn solid" href="https://www.booking.com/Share-BVl0XAD" target="_blank" rel="noopener"><span data-ar="احجز عبر Booking.com" data-en="Book on Booking.com">احجز عبر Booking.com</span></a>
+    <a class="btn ghost" href="https://www.facebook.com/share/19Joiv9ehV/" target="_blank" rel="noopener"><span data-ar="راسلنا على فيسبوك" data-en="Message us on Facebook">راسلنا على فيسبوك</span></a>
+  </div>
+</div></div></section>
+
+<footer><div class="wrap">
+  <div>© 2026 دار ريزيدنس — Dar Residence · مدينتي، القاهرة الجديدة، مصر</div>
+  <div style="margin-top:8px"><span data-ar="صور المدينة: ويكيميديا كومنز" data-en="City photos: Wikimedia Commons">صور المدينة: ويكيميديا كومنز</span> · <span data-ar="بُني بواسطة" data-en="Built by">بُني بواسطة</span> <a href="https://websitak.pro" target="_blank" rel="noopener">WEBSITAK</a></div>
+</div></footer>
+
+<script>
+function toggleLang(){
+  const btn=document.getElementById('langBtn');
+  const toEn=document.documentElement.lang==='ar';
+  document.documentElement.lang=toEn?'en':'ar';
+  document.documentElement.dir=toEn?'ltr':'rtl';
+  document.title=toEn?'Dar Residence — Furnished Apartments in Madinaty, New Cairo':'دار ريزيدنس — شقق مفروشة في مدينتي، القاهرة الجديدة';
+  document.querySelectorAll('[data-ar]').forEach(el=>{
+    const v=toEn?el.dataset.en:el.dataset.ar;
+    if(v!==undefined&&v!==''){if(el.classList.contains('en')&&!toEn){/*keep latin for brand*/}else{el.textContent=v;}}
+  });
+  btn.textContent=toEn?'العربية':'English';
+}
+</script>
+</body>
+</html>
